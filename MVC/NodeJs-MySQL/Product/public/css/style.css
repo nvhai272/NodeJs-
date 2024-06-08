@@ -1,0 +1,96 @@
+label {
+    display: inline-block;
+    width: 300px; /* Chiều rộng cố định */
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+input, textarea {
+    margin-left: 20px; /* Khoảng cách từ label đến input/textarea */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+textarea {
+    vertical-align: top;
+}
+button {
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+button {
+    margin-left: 10px;
+}
+form{
+    display: inline-block;  
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    animation: modal-show 0.3s ease-out;
+    border-radius: 6px;
+
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Animation */
+@keyframes modal-show {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.changeButton {
+    margin-left: 10px;
+    display: inline-block;
+    padding: 8px 10px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* CSS để thay đổi màu khi rê chuột vào nút */
+.changeButton:hover {
+    background-color: #0056b3;
+}

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<title>
+    Edit
+</title>
+
+<body>
+    <form method="POST" action="/departments/<%= department.id %>">
+        <input type="text" name="name" value="<%= department.name %>">
+        <input type="submit" value="Update">
+    </form>
+    <a href="/departments">Back</a>
+</body>
+
+</html>

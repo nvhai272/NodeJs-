@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Employee List</title>
+</head>
+
+<body>
+    <a href="employees/create">Create New</a>
+    <ul>
+        <% employees.forEach(employee=>{ %>
+            <li>
+                <%= employee.id %> - <%= employee.last_name %> <%= employee.first_name %>
+                <a href="employees/<%= employee.id %>/edit">Edit</a>
+                <a href="employees/<%= employee.id %>">View</a>
+                <a href="employees/<%= employee.id %>/delete">Delete</a>
+            </li>
+            <% }) %>
+    </ul>
+</body>
+
+</html>

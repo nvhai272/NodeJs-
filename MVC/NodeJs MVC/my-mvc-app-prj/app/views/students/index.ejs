@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <h1>Students</h1>
+    <a href="/students/create"><button>Create New Student</button></a>
+    <ul>
+        <% students.forEach(student=> { %>
+            <li>
+                Student: <label>
+                    <%= student.name %>
+                </label>
+                <button onclick="showDetails('<%= student.name %>', '<%= student.age %>', '<%= student.gender %>')"
+                    style="background-color: burlywood">Details</button>
+
+                <form action="/students/<%= student.id %>/edit" method="GET"><button type="submit">Edit</button></form>
+
+                <form action="/students/<%= student.id %>/delete" method="POST">
+                    <button type="submit" style="background-color: red">Delete</button>
+                </form>
+            </li>
+            <% }) %>
+    </ul>
+
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+
+            <b>Name:</b> <span id="name"></span><br><br>
+            <b> Age:</b> <span id="age"></span><br><br>
+            <b> Gender:</b> <span id="gender"></span><br><br>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    function showDetails(name, age, gender) {
+        document.getElementById('productModal').style.display = 'block';
+        document.getElementById('name').innerText = name;
+        document.getElementById('age').innerText = age;
+        document.getElementById('gender').innerText = gender;
+    }
+
+    function closeModal() {
+        var modal = document.getElementById('productModal');
+        modal.style.display = 'none';
+    }
+</script>
+</body>
+
+</html>

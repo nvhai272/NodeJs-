@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Employees</title>
+</head>
+<body>
+  <h1>Employees</h1>
+  <a href="/employees/create">Create New </a>
+  <ul>
+    <% employees.forEach(employee => { %>
+      <li>
+        <%= employee.id %> - <%= employee.email %>
+        <a href="/employees/<%= employee.id %>">View</a>
+        <a href="/employees/<%= employee.id %>/edit">Edit</a>
+        <form action="/employees/<%= employee.id %>/delete" method="POST" style="display:inline;">
+          <button type="submit">Delete</button>
+        </form>
+      </li>
+    <% }) %>
+  </ul>
+</body>
+</html>

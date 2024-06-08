@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Edit</title>
+</head>
+
+<body>
+    <h1>Department</h1>
+    <form method="post" action="/departments/<%= department.id %>">
+        <label>Department name:</label>
+        <input type="text" name="name" value="<%= department.name %>">
+        <button type="submit">Edit</button>
+    </form>
+</body>
+
+</html>

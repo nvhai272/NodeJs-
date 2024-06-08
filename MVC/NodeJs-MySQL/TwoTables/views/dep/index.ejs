@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Departments</title>
+</head>
+
+<body>
+    <h1>Departments</h1>
+    <a href="/departments/create">Create new</a>
+    <ul>
+        <% departments.forEach(department=> { %>
+            <li>
+                <p>
+                    <%= department.name %>
+                </p>
+                <a href="/departments/<%= department.id %>">Show</a>
+                <a href="/departments/<%= department.id %>/edit">Edit</a>
+                <form method="post" action="/departments/<%= department.id %>/delete" style="display: inline"><button>Delete</button></form>
+            </li>
+            <% }); %>
+    </ul>
+</body>
+
+</html>

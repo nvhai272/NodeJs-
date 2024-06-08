@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Edit Book</h1>
+    <form action="/books/<%= book.id %>" method="POST">
+
+        <label for="name">Id:</label>
+        <input type="text" id="id" name="id" readonly value="<%= book.id%>">
+        <label>Name:</label>
+        <input type="text" name="name" value="<%= book.name %>" required>
+        <label>Price:</label>
+        <input type="float" name="price" value="<%= book.price %>" required>
+        <label>Author:</label>
+        <input type="text" name="author" value="<%= book.author %>" required>
+        <label>Publisher:</label>
+        <input type="text" name="publisher" value="<%= book.publisher %>" required>
+        <button type="submit">Update</button>
+
+    </form>
+    <a href="/books"><button>Back</button></a>
+
+</body>
+
+</html>

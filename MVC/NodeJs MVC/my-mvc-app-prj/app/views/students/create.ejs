@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Student</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1>Create New Student</h1>
+    <form action="/students" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br><br>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required>
+        <br><br>
+        <label for="gender">Gender:</label>
+        <input id="gender" name="gender" required></input>
+        <br><br>
+        <button type="submit">Create</button> <a href="/students" class="changeButton" style="background-color: red;">Back</a>
+    </form>
+</body>
+</html>

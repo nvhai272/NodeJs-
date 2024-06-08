@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products</title>
+    <link rel="stylesheet" href="../public/css/style.css" />
+</head>
+
+<body>
+    <h1>Products</h1>
+    <a href="/products/create"><button>Create New Product</button> </a>
+    <ul>
+        <% let count=1; %>
+            <% products.forEach(product=> { %>
+                <li>
+                    <label>
+                        <span>Name <%= count %> - <%= product.name %></span>
+                    </label>
+
+                    <!-- <form action="/products/<%= product.id %>" method="GET">
+                        <button type="submit" style="background-color: burlywood">Details</button>
+                    </form> -->
+
+                    <button onclick="showDetails('<%= product.name %>', '<%= product.price %>', '<%= product.description %>')" style="background-color: burlywood">Details</button>
+
+                    <form action="/products/<%= product.id %>/edit" method="GET"><button type="submit">Edit</button></form>
+
+                    <form action="/products/<%= product.id %>/delete" method="POST">
+                        <button type="submit" style="background-color: red">Delete</button>
+                    </form>
+                </li>
+                <% count++; %>
+                    <% }) %>
+    </ul>
+
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+
+            <p id="productName"></p>
+            <p id="productPrice"></p>
+            <p id="productDescription"></p>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    function showDetails(name, price, description) {
+        document.getElementById('productModal').style.display = 'block';
+        document.getElementById('productName').innerText =  name;
+        document.getElementById('productPrice').innerText = '$'+price;
+        document.getElementById('productDescription').innerText = description;
+    }
+
+    function closeModal() {
+        var modal = document.getElementById('productModal');
+        modal.style.display = 'none';
+    }
+</script>
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Department List</title>
+</head>
+
+<body>
+    <a href="departments/create">Create Department</a>
+    <ul>
+        <% departments.forEach(department=>{%>
+            <li>
+                <%= department.id %> - <%= department.name %>
+                        <a href="departments/<%= department.id %>"><button>View</button></a>
+                        <a href="departments/<%=department.id%>/edit"><button>Update</button></a>
+                        <form method="post" action="departments/<%= department.id%>/delete" style="display: inline;"><button>Delete</button>
+                        </form>
+            </li>
+            <%})%>
+    </ul>
+</body>
+</html>
